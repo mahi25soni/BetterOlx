@@ -24,7 +24,7 @@ const productSchema = new mongoose.Schema({
         }
     ],
     // See, ek image ki public id se images ke folder ka pta lag jayega, and then ham folder ke andar ka sab delete kar sakte hai
-    image_public_id : [{
+    images_public_id : [{
         type : String
     }],
     address : {
