@@ -3,12 +3,12 @@ const jwt = require("jsonwebtoken")
 const otpGenerator = require('otp-generator')
 
 
-const { User } = require("../middlewares/userModel")
+const { User } = require("../models/userModel")
 const { sendEmail } = require("../config/emailSetup")
 
 
 const sendOtpViaEmail = (user) => {
-    sendEmail(user.email, user.user_name, user.otp)
+    // sendEmail(user.email, user.user_name, user.otp)
 
     setTimeout(async function() {
         try{
