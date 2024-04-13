@@ -4,6 +4,7 @@ const cookieParse = require("cookie-parser")
 require("dotenv").config();
 
 const dbConnect = require("./config/dbConnection")
+const cloudConnect = require("./config/cloudinarySetup")
 const userRoute = require("./routes/userRoute")
 const productRoute = require("./routes/productRoute")
 
@@ -18,8 +19,8 @@ app.use("/api/user",userRoute)
 app.use("/api/product", productRoute)
 
 
-
 dbConnect();
+cloudConnect();
 
 app.listen(PORT, () => {
     console.log("Server started!")
