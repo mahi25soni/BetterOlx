@@ -32,7 +32,19 @@ const userSchema = new mongoose.Schema({
     active : {
         type : Boolean,
         default : false
-    }
+    },
+    asSeller : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : "Product"
+        }
+    ],
+    asBuyer : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : "Product"
+        }
+    ],
     // addresses : [
     //     {
     //         type : mongoose.Schema.Types.ObjectId,
