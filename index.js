@@ -1,5 +1,6 @@
 const express = require("express")
 const bodyParser = require("body-parser")
+const cookieParse = require("cookie-parser")
 require("dotenv").config();
 
 const dbConnect = require("./config/dbConnection")
@@ -8,6 +9,7 @@ const userRoute = require("./routes/userRoute")
 const PORT = process.env.PORT || 4000 
 
 const app = express();
+app.use(cookieParse())
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended : true}))
 
